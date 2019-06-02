@@ -1,0 +1,7 @@
+.mainTitle {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.title-bg {
+  background-image: linear-gradient(to left, #d4d2ff, #e4dbfd, #f1e6fc, #faf2fd, #fffeff);
+}
