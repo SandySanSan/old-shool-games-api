@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Game from './Game';
-
+import axios from 'axios';
 
 class Gamelist extends Component {
   constructor(props) {
@@ -15,14 +15,11 @@ class Gamelist extends Component {
 
   }
   componentDidMount() {
-    fetch("http://www.campus-bordeaux.ovh:3002/joysticks/api/games")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          games: data,
-
-        });
-      });
+    axios.get(`http://www.campus-bordeaux.ovh:3002/joysticks/api/games`)
+      .then(res => {
+        const games = res.data;
+        this.setState({ games });
+      })
   }
   //Filtrage mots-clé avec le menu déroulant
   handleChange = (event) => {

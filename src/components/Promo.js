@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import '../style.css';
 import GamePromo from "./GamePromo";
+import axios from 'axios';
+
 
 class Promo extends Component {
   constructor(props) {
@@ -11,14 +13,11 @@ class Promo extends Component {
     }
   }
   componentDidMount() {
-    fetch("http://www.campus-bordeaux.ovh:3002/joysticks/api/games")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          games: data,
-
-        });
-      });
+    axios.get(`http://www.campus-bordeaux.ovh:3002/joysticks/api/games`)
+      .then(res => {
+        const games = res.data;
+        this.setState({ games });
+      })
   }
   render() {
     const { games } = this.state;
