@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ReactPlayer from 'react-player';
 import './game.css';
 
-const GamePromo = ({ name, promo, trailer, description, image1, image2, theme }) => {
+const GamePromo = ({ name, promo, date, trailer, description, image1, image2, theme }) => {
   return (
     <Fragment>
 
@@ -45,6 +45,7 @@ const GamePromo = ({ name, promo, trailer, description, image1, image2, theme })
               className="p-2 mainTitle text-uppercase">
               {name}
             </h1>
+            <p><small className="text-muted">Date de sortie : {date.slice(0, 10)}</small></p>
             <h5>{description}</h5>
 
           </div>

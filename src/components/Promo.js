@@ -13,7 +13,7 @@ class Promo extends Component {
     }
   }
   componentDidMount() {
-    axios.get(`http://www.campus-bordeaux.ovh:3002/joysticks/api/games`)
+    axios.get(`../../../games.json`)
       .then(res => {
         const games = res.data;
         this.setState({ games });
