@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Game from './Game';
 import axios from 'axios';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 class Gamelist extends Component {
   constructor(props) {
@@ -12,6 +14,8 @@ class Gamelist extends Component {
     };
     this.removeItem = this.removeItem.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.addNotification = this.addNotification.bind(this);
+    this.notificationDOMRef = React.createRef();
 
   }
   componentDidMount() {
@@ -35,9 +39,22 @@ class Gamelist extends Component {
   removeItem(id) {
     let toFilter = this.state.games.filter(game => game.id !== id)
     this.setState({ games: toFilter })
-
+    this.addNotification()
   }
 
+  addNotification() {
+    this.notificationDOMRef.current.addNotification({
+      title: "SUPPRESSION",
+      message: "Le jeu a bien été supprimé de la liste",
+      type: "danger",
+      insert: "top",
+      container: "top-left",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: { duration: 2500 },
+      dismissable: { click: true }
+    });
+  }
 
   render() {
     let tags = this.state.games
@@ -61,6 +78,7 @@ class Gamelist extends Component {
           </select>
         </div>
         <div className="row mx-auto">
+          <ReactNotification ref={this.notificationDOMRef} />
           {this.state.games
             .filter(game => game.theme.includes(this.state.value))
             .map((game) => (

@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+
 import '../style.css';
-import './game.css'
+import './game.css';
 
 const Game = ({ name, pochette, description, date, theme, id, remove, onClick }) => (
   <Fragment>
@@ -19,7 +20,8 @@ const Game = ({ name, pochette, description, date, theme, id, remove, onClick })
               type="button"
               className="btn btn-warning card-img-overlay mb-5 ml-auto"
               style={{ width: 40, height: 40, padding: 0 }}
-              onClick={() => remove(id)}> X </button>
+              onClick={() => remove(id)}
+            > X </button>
             {/* //tags */}
             <div
               className="badge badge-pill badge-success mr-1 mb-2"
