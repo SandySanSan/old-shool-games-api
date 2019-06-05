@@ -48,7 +48,7 @@ class Gamelist extends Component {
       message: "Le jeu a bien été supprimé de la liste",
       type: "danger",
       insert: "top",
-      container: "top-left",
+      container: "top-right",
       animationIn: ["animated", "fadeIn"],
       animationOut: ["animated", "fadeOut"],
       dismiss: { duration: 2500 },
