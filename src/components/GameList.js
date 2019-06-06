@@ -46,9 +46,9 @@ class Gamelist extends Component {
     this.notificationDOMRef.current.addNotification({
       title: "SUPPRESSION",
       message: "Le jeu a bien été supprimé de la liste",
-      type: "danger",
+      type: "success",
       insert: "top",
-      container: "top-right",
+      container: "top-left",
       animationIn: ["animated", "fadeIn"],
       animationOut: ["animated", "fadeOut"],
       dismiss: { duration: 2500 },

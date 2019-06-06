@@ -46,53 +46,6 @@ const Game = ({ name, pochette, description, date, theme, id, remove, onClick })
         </div>
       </div>
     </div>
-
-
-    {/* 
-
-    <div className="card m-1">
-      <img
-        src={pochette}
-        alt={name}
-        className="card-img-top" />
-      <button
-        type="button"
-        className="btn btn-danger card-img-overlay mb-5"
-        style={{ width: 40, height: 40, padding: 0 }}
-        onClick={() => remove(id)}> X </button>
-      <div className="bg-warning p-3 d-flex justify-content-center">
-        <div>
-          <img
-            src={image1}
-            alt={name}
-            className="thumbnail-image p-2" />
-          <img
-            src={image2}
-            alt={name}
-            className="thumbnail-image p-2" />
-        </div>
-
-      </div>
-      <div className="card-body">
-        <h3 className="card-text">{name}</h3>
-        <p className="text-info">Date de sortie : {date.slice(0, 10)}</p>
-        <div
-          className="badge badge-pill badge-success mr-1"
-          type="button"
-          onClick={() => onClick(theme)}>{theme}</div>
-        <p>{description}</p>
-        <div>
-          <Link to={`/jeu/promo/${id}`}>
-            <button
-              type="button"
-              className="btn btn-info">
-              Voir la promo
-          </button>
-          </Link></div>
-        <div>
-        </div>
-      </div>
-    </div> */}
   </Fragment>
 
 )
